@@ -1,0 +1,17 @@
+group 'ua.forge'
+version '1.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'junit:junit:+'
+    compile 'org.seleniumhq.selenium:selenium-java:+'
+    compile 'com.codeborne:selenide:+'
+    compile 'io.github.bonigarcia:webdrivermanager:+'
+}
