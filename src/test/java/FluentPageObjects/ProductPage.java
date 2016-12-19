@@ -16,7 +16,7 @@ public class ProductPage {
     private By buttonToCart = byCssSelector(".in-cart a");
 
     public ProductPage(Integer productId){
-        this.product = findProductById(productId);
+        this.product = $(Selectors.by("data-product-id", String.valueOf(productId)));
     }
 
     public ProductPage openProductPage(Integer productId) {
@@ -32,10 +32,6 @@ public class ProductPage {
     public CartPage clickToCartButton(){
         this.product.$(buttonToCart).click();
         return new CartPage();
-    }
-
-    private SelenideElement findProductById(Integer productId){
-        return $(Selectors.by("data-product-id", String.valueOf(productId)));
     }
 
 }
