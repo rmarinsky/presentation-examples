@@ -1,5 +1,6 @@
 package FluentPageObjects;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selectors.byName;
@@ -15,9 +16,13 @@ public class HomePage {
         return new ProductListPage();
     }
 
-    public CartPage goToCart(){
-        this.cartIcon.click();
-        return new CartPage();
+    public LoginPopup openLoginPopup(){
+        $("").click();
+        return new LoginPopup();
+    }
+
+    public void shouldBeLoggedUser(String value){
+        $(".account-name a").shouldHave(Condition.text(value));
     }
 
 }

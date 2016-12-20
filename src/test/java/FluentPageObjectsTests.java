@@ -21,5 +21,13 @@ public class FluentPageObjectsTests extends BaseTest {
                 cartPageShouldHasProduct(productId);
     }
 
+    @Test
+    public void loginUserTest(){
+        open("");
+        new HomePage().
+                openLoginPopup().
+                loginUser("email@test.com","111111").
+                shouldBeLoggedUser("ololosha");
+    }
 
 }
